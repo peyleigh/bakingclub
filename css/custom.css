@@ -1,0 +1,609 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+
+STUDENT CUSTOMIZATION FILE
+This is where you make your design changes!
+Experiment with colors, typography, spacing, and component styles.
+
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+/* ==========================================================================
+   DESIGN SYSTEM - CUSTOMIZE YOUR COLORS & BRAND
+   ========================================================================== */
+
+:root {
+  --primary-100: #B8A9C6; /* Pastel purple */
+  --primary-80: #C4B7D7;  /* Lighter pastel purple */
+  --primary-50: #D4CBE5;  /* Very light pastel purple */
+  --primary-25: #E8E3F0;  /* Softest pastel purple */
+  --grey: #F5F2F7;        /* Light purple-tinted grey */
+  --white: #fff;
+  
+  /* Additional pastel colors */
+  --accent-mint: #B8E0D2;  /* Pastel mint */
+  --accent-peach: #FFD9C7; /* Pastel peach */
+  --accent-yellow: #FAE8B7; /* Pastel yellow */
+  --bg-pink: #FFE6F3;      /* Current pink background */
+}
+
+
+
+
+/* ==========================================================================
+   TYPOGRAPHY - CUSTOMIZE FONTS & TEXT STYLES
+   ========================================================================== */
+
+/* Hero Section Styles */
+#hero-image {
+  position: relative;
+  background: linear-gradient(45deg, var(--accent-peach) 0%, var(--bg-pink) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 8rem 2rem;
+  overflow: hidden;
+  min-height: 80vh;
+}
+
+#hero-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    /* Large decorative sprinkles */
+    radial-gradient(circle at 25% 25%, var(--primary-100) 6px, transparent 7px) 40px 40px,
+    radial-gradient(circle at 75% 75%, var(--accent-mint) 6px, transparent 7px) 60px 60px,
+    /* Medium sprinkles with glow */
+    radial-gradient(circle at 50% 50%, var(--accent-yellow) 4px, transparent 6px) 30px 30px,
+    radial-gradient(circle at 15% 85%, var(--accent-peach) 4px, transparent 6px) 70px 20px,
+    /* Elongated sprinkles */
+    radial-gradient(ellipse at 85% 35%, var(--primary-50) 8px 4px, transparent 9px) 45px 50px,
+    /* Sparkly small sprinkles */
+    radial-gradient(circle at 35% 65%, var(--primary-80) 2px, transparent 3px) 25px 75px,
+    radial-gradient(circle at 65% 15%, var(--primary-25) 2px, transparent 3px) 55px 35px;
+  background-size: 120px 120px;
+  opacity: 0.5;
+  animation: float-1 20s infinite ease-in-out;
+  z-index: -1;
+}
+
+#hero-image h1 {
+  color: var(--primary-100);
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.9);
+  margin-bottom: 1.5rem;
+  font-size: 4rem;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+#hero-image p {
+  color: var(--primary-80);
+  font-size: 1.8rem;
+  max-width: 800px;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.9);
+  margin-bottom: 2.5rem;
+  line-height: 1.4;
+}
+
+/* Sprinkles animation keyframes */
+@keyframes float-1 {
+  0%, 100% { transform: rotate(0deg) translateY(0); }
+  50% { transform: rotate(8deg) translateY(-12px); }
+}
+
+@keyframes float-2 {
+  0%, 100% { transform: rotate(0deg) translateY(0); }
+  50% { transform: rotate(-12deg) translateY(-15px); }
+}
+
+@keyframes float-3 {
+  0%, 100% { transform: rotate(0deg) translateY(0); }
+  50% { transform: rotate(15deg) translateY(-10px); }
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Organic sprinkle shapes */
+body::before,
+body::after,
+body > div::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+body::before {
+  background: 
+    /* Large colorful sprinkles */
+    radial-gradient(circle at 15% 25%, #FF69B4 4px, transparent 5px) 35px 20px,
+    radial-gradient(circle at 85% 35%, #00CED1 4px, transparent 5px) 50px 45px,
+    radial-gradient(circle at 45% 75%, #FFD700 4px, transparent 5px) 25px 60px,
+    /* Long sprinkles */
+    radial-gradient(ellipse at 75% 15%, #98FB98 6px 3px, transparent 7px) 60px 15px,
+    radial-gradient(ellipse at 25% 65%, #DDA0DD 7px 3px, transparent 8px) 40px 80px,
+    /* Star-shaped sprinkles */
+    radial-gradient(12px 12px at 65% 85%, #FF69B4 20%, transparent 50%) 70px 30px,
+    radial-gradient(10px 10px at 35% 45%, #E6E6FA 20%, transparent 50%) 15px 90px;
+  background-size: 100px 100px;
+  opacity: 0.5;
+  animation: float-1 10s infinite ease-in-out;
+}
+
+body::after {
+  background:
+    /* Medium sprinkles */
+    radial-gradient(circle at 55% 25%, #FF1493 3px, transparent 4px) 30px 40px,
+    radial-gradient(circle at 35% 85%, #32CD32 3px, transparent 4px) 80px 25px,
+    radial-gradient(circle at 75% 55%, #FF69B4 3px, transparent 4px) 45px 70px,
+    radial-gradient(circle at 25% 35%, #40E0D0 3px, transparent 4px) 90px 55px,
+    /* Sparkly dots */
+    radial-gradient(circle at 85% 75%, #FFB6C1 2px, transparent 3px) 20px 85px,
+    radial-gradient(circle at 15% 65%, #FFA500 2px, transparent 3px) 65px 35px;
+  background-size: 80px 80px;
+  opacity: 0.4;
+  animation: float-2 8s infinite ease-in-out;
+}
+
+body > div::before {
+  background:
+    /* Small sparkly sprinkles */
+    radial-gradient(circle at 45% 45%, #FFD700 2px, transparent 3px) 10px 10px,
+    radial-gradient(circle at 75% 25%, #FF69B4 2px, transparent 3px) 30px 25px,
+    radial-gradient(circle at 25% 65%, #00CED1 2px, transparent 3px) 50px 45px,
+    radial-gradient(circle at 85% 85%, #98FB98 2px, transparent 3px) 70px 65px;
+  background-size: 60px 60px;
+  opacity: 0.6;
+  animation: float-3 12s infinite ease-in-out, sparkle 4s infinite ease-in-out;
+}
+
+body {
+  color: var(--primary-80);
+  background-color: var(--bg-pink);
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Heading Styles - Customize sizes, colors, spacing */
+h1, h2, h3, h4, h5, h6 { 
+  line-height: 1.1;
+  color: var(--primary-80);
+  /* Add your custom heading styles here */
+}
+
+h1 { 
+  font-size: 90px;
+  /* Try adding: font-weight, color, text-transform, etc. */
+}
+
+h2 { 
+  font-size: 42px;
+}
+
+
+
+h3 { 
+  font-size: 30px;
+}
+
+h4 { 
+  font-size: 24px;
+}
+
+h5 { 
+  font-size: 20px;
+}
+
+h6 { 
+  font-size: 18px;
+}
+
+/* Paragraph Styles */
+p {
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--primary-80);
+  /* Try adjusting: line-height, letter-spacing, margin-bottom */
+}
+
+img + h4,
+picture + p {
+  margin-top: var(--spacing8x2);
+}
+
+
+
+section div+div {
+  margin-top: var(--spacing8x1);
+}
+
+
+/* Hero Section Styles */
+#hero-image {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1612198790700-0ff55e5c1d1d?auto=format&fit=crop&q=80');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--white);
+}
+
+#hero-image h1 {
+  color: var(--white);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1rem;
+}
+
+#hero-image p {
+  color: var(--white);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  font-size: 24px;
+  max-width: 600px;
+}
+
+/* Featured Images */
+.featured-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.featured-image:hover {
+  transform: scale(1.02);
+}
+
+/* Gallery Grid */
+.gallery-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile Typography Adjustments */
+@media only screen and (max-width: 799px) {
+  h1 { 
+    font-size: 48px;
+  }
+  
+  #hero-image p {
+    font-size: 18px;
+    padding: 0 20px;
+  }
+  
+  /* Add more mobile typography adjustments here */
+}
+
+/* ==========================================================================
+   LINKS & BUTTONS - CUSTOMIZE INTERACTIVE ELEMENTS
+   ========================================================================== */
+
+/* Basic Link Styles */
+a {
+  text-decoration: none;
+  color: var(--primary-80);
+  transition: all 300ms;
+  /* Try adding: border-bottom, font-weight changes, etc. */
+}
+
+a:hover {
+  opacity: 0.5;
+  /* Try different hover effects: color changes, transforms, etc. */
+}
+
+/* Button Styles - Customize your call-to-action buttons */
+a.button {
+  border-radius: 50px;
+  border: 2px solid var(--primary-80);
+  padding: 10px 20px 8px;
+  display: inline-block;
+  margin-top: var(--spacing8x2);
+  /* Try adding: background-color, box-shadow, transform on hover, etc. */
+}
+
+a.button:hover {
+  background: var(--dark)
+}
+
+/* Example: Secondary Button Style */
+a.button-secondary {
+  background-color: var(--accent-color);
+  border: 1.5px solid var(--accent-color);
+  color: var(--primary-80);
+}
+
+/* Example: Highlight Button Style */
+a.button-highlight {
+  background-color: var(--highlight-color);
+  border: 1.5px solid var(--highlight-color);
+  color: white;
+}
+
+/* ==========================================================================
+   LAYOUT SECTIONS - CUSTOMIZE PAGE STRUCTURE
+   ========================================================================== */
+
+
+/* Header styles */
+header img {
+  width: 160px;
+  /* Try adjusting: width, border-radius for logo styling */
+}
+
+header nav {
+  text-align: right;
+  font-size: 15px;
+}
+
+header nav a {
+  margin-left: 40px;
+  /* Try adding: text-transform, font-weight, padding for button-style nav */
+}
+
+header nav a.active {
+  border-bottom: 2px solid var(--primary-80);
+  padding-bottom: 2px;
+}
+
+
+/* Hero section */
+#hero-image {
+  background: url('../img/placeholder_bg.png') no-repeat center center/cover;
+  height: 95vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing8x3);
+}
+
+#hero-image h1 {
+  text-align: center;
+  color: var(--white);
+  margin: 0; 
+
+}
+
+#hero-image p {
+  color: var(--white);
+  margin: 0; 
+}
+
+#hero-image span i {
+  background: var(--white);
+  font-size: 1.625rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: var(--spacing8x12);
+}
+
+
+/* Light background wrapper - extends to viewport edges */
+.light-bg-wrapper {
+  background: var(--primary-25);
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  padding: var(--spacing8x3) calc(50vw - 50%);
+  box-sizing: border-box;
+}
+
+/* Pastel section wrapper - soft background for visual interest */
+.dark-bg-wrapper {
+  background: var(--accent-peach);
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  padding: var(--spacing8x3) calc(50vw - 50%);
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Callout */
+.callout {
+  background: var(--accent-peach);
+}
+
+.callout div {
+  padding: var(--spacing8x8);
+}
+
+.callout-image {
+  background: url('../img/placeholder_bg.png') no-repeat center center/cover;
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+}
+
+
+
+
+
+
+
+/*  Content section */
+
+section p + a.button {
+  margin-top: var(--spacing8x12);
+}
+
+
+/* Footer Styles */
+footer {
+  width: 100%;
+  background: var(--primary-50);
+  color: var(--primary-100);
+  padding: 40px 20px 20px;
+  /* Pastel purple background */
+}
+
+footer img {
+  width: 160px;
+}
+
+footer hr {
+  margin: 10px 0 20px;
+  border: none;
+  border-bottom: 1.5px solid var(--primary-80);
+}
+
+footer a, footer p {
+  color: var(--primary-100);
+  font-size: 12px;
+}
+
+footer nav a { 
+  font-size: 14px;
+  color: var(--primary-100);
+}
+
+footer nav a + a {
+  margin-left: 40px;
+}
+
+footer nav, footer p {
+  text-align: right;
+}
+
+/* Mobile Footer Adjustments */
+@media only screen and (max-width: 799px) {
+  footer nav {
+    text-align: center;
+  }
+
+  footer img {
+    margin: 0 auto;
+  }
+}
+
+/* ==========================================================================
+   COMPONENTS - CUSTOMIZE REUSABLE ELEMENTS
+   ========================================================================== */
+
+.dark-bg-wrapper h2,
+.dark-bg-wrapper h3,
+.dark-bg-wrapper h4,
+.dark-bg-wrapper p {
+  color: var(--primary-100);
+}
+
+.dark-bg-wrapper a.button {
+  border: 2px solid var(--primary-100);
+  color: var(--primary-100);
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+.dark-bg-wrapper a.button:hover {
+  background-color: var(--primary-100);
+  color: var(--white);
+}
+
+
+   /* Divider Lines */
+hr {
+  border: none;
+  border-bottom: 1.5px solid var(--primary-25);
+  /* Try adding: margin, different border styles, gradients */
+}
+
+/* Icon with Text Component */
+.icon-with-text i {
+  background: var(--grey);
+  padding: 17px 16px 23px;
+  border-radius: 200px;
+  font-size: 30px;
+  color: var(--primary-80);
+  /* Try customizing: colors, sizing, border-radius, box-shadow */
+}
+
+
+
+
+
+
+
+/* ==========================================================================
+   RESPONSIVE CUSTOMIZATIONS
+   ========================================================================== */
+
+/* Mobile-specific customizations */
+@media only screen and (max-width: 799px) {
+  /* Add mobile-specific styling here */
+  
+  /* Example: Larger touch targets for mobile */
+  a.button {
+    padding: 18px 24px 14px;
+    font-size: 16px;
+  }
+
+  
+  .callout-image {
+    height: 33vh;
+  }
+
+ 
+}
+
+/* Tablet-specific customizations */
+@media only screen and (min-width: 800px) and (max-width: 1279px) {
+  /* Add tablet-specific styling here */
+}
+
+/* Desktop-specific customizations */
+@media only screen and (min-width: 1280px) {
+  /* Add desktop-specific styling here */
+}
+
+/* Quote Section */
+.quote-section blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+.quote-section blockquote p {
+  font-size: 24px;
+  font-style: italic;
+  color: var(--primary-100);
+  margin-bottom: var(--spacing8x2);
+  line-height: 1.4;
+}
+
+.quote-section cite {
+  font-size: 16px;
+  color: var(--primary-80);
+  font-style: normal;
+  font-weight: 500;
+}
